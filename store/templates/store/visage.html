@@ -1,0 +1,22 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	<div class="row">
+		{% for visage in Visages %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{visage.imageURL}}">
+			<div class="box-element product">
+				<h6><strong>{{visage.name}}</strong></h6>
+				<hr>
+
+				<button data-product="{{visage.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				
+				
+				<h4 style="display: inline-block; float: right "><strong>{{visage.price}}DNT</strong></h4>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+{% endblock content %}
